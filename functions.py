@@ -212,9 +212,8 @@ def write_atributo_sqlserver(atributo_nombre, connection_string):
 
             cursor.execute("SELECT PkAtributo FROM TAtributos_GS1 WHERE Atributo_Descripcion = ?", atributo_nombre)
             data = cursor.fetchone()
-        else:
-            id_atributo = data[0]
-            print(f"Atributo '{atributo_nombre}' ya existe con ID {id_atributo}.")
+        id_atributo = data[0]
+        print(f"Atributo '{atributo_nombre}' tiene ID {id_atributo}.")
 
     except Exception as e:
         print(f"Error en write_atributo_sqlserver: {e}")
