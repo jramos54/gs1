@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "cab1ad74-b490-4d17-906a-d7294fac014d",
+		"name": "ISCAM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5438997",
+		"_collection_link": "https://crimson-desert-531914.postman.co/workspace/My-Workspace~59cad2ee-f489-4e53-80de-d02027db7bda/collection/5438997-cab1ad74-b490-4d17-906a-d7294fac014d?action=share&source=collection_link&creator=5438997"
+	},
+	"item": [
+		{
+			"name": "Busqueda x GTIN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "I1payfxuw#",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "7508006015651",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"PageNumber\":1,\r\n\"PageSize\": 1000,\"GtinList\": [\"07503017754612\",\"07503017754636\"], \r\n\"TradeItemKey\": {\"TargetMarketCountryCode\": \"484\", \"Gln\":\"7508006351964\"},\"TradeItemModules\":[\"TradeItemMeasurements\",\"TradeItemDescriptionInformation\",\"ReferencedFileDetailInformation\",\"PackagingInformation\",\"PackagingMarking\",\"Extension\",\"CertificationAuthorityInformation\",\"DeliveryPurchasingInformation\",\"InternalTargetMarketCompany\",\"InternalBusinessInformation\",\"MarketingInformation\",\"PlaceOfItemActivity\",\"SalesInformation\",\"TradeItemDataCarrierAndIdentification\",\"TradeItemHandlingInformation\",\"TradeItemHierarchy\",\"TradeItemLifespan\",\"TradeItemSize\",\"VariableTradeItemInformation\",\"NutritionalInformation\"]}"
+				},
+				"url": {
+					"raw": "https://apisync.syncfonia.com/wsproxy/apiServices/tradeItemService.svc/Search",
+					"protocol": "https",
+					"host": [
+						"apisync",
+						"syncfonia",
+						"com"
+					],
+					"path": [
+						"wsproxy",
+						"apiServices",
+						"tradeItemService.svc",
+						"Search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transformacion Imagenes",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "I1payfxuw#",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "7508006015651",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"GTIN\":[\"00041220972203\"], \r\n\"GLN\":[\"7504000225003\"],\r\n\"TargetMarketCountryCode\":\"MX\",\r\n\"PageNumber\":1,\r\n\"PageSize\":10,\r\n\"MediaContent\":true,\r\n\"MediaAssetType\": \"TradeItem\",\r\n\"GetUrl\":true,\r\n\"MediaStatus\":[\"Published\"],\r\n\"MediaContentType\":\"Jpeg\",\r\n\"adaptationSpecs\": \"sahuayo\",\r\n\"backremoval\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://apisync.syncfonia.com/wsproxy/apiservices/multimediaService.svc/GetMultimediaContent",
+					"protocol": "http",
+					"host": [
+						"apisync",
+						"syncfonia",
+						"com"
+					],
+					"path": [
+						"wsproxy",
+						"apiservices",
+						"multimediaService.svc",
+						"GetMultimediaContent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Organizaciones",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "I1payfxuw#",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "7508006015651",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Gln\": \"7507001800002\",\r\n\"OrganizationModules\": [\"CompanyLocalizationInformation\",\r\n\"CompanyInformation\"]\r\n} \r\n"
+				},
+				"url": {
+					"raw": "http://apisync.syncfonia.com/wsproxy/apiServices/organizationService.svc/Search",
+					"protocol": "http",
+					"host": [
+						"apisync",
+						"syncfonia",
+						"com"
+					],
+					"path": [
+						"wsproxy",
+						"apiServices",
+						"organizationService.svc",
+						"Search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search LastChangedTime Novedades",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "F7lwixhnc#",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "7504022468006",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"LastChangedEndDateTime\":\"\\/Date(1666109938000)\\/\",\r\n\t\"LastChangedStartDateTime\":\"\\/Date(1666023538000)\\/\", \r\n\t\"PageNumber\":1,\r\n\t\"PageSize\":500,\r\n\t\"TargetMarketCountryCode\":\"484\",\r\n\t\"IsDataQualityVerified\": true,\r\n\t\"TradeItemModules\":[\"ALL\"]\r\n}"
+				},
+				"url": {
+					"raw": "https://apisync.syncfonia.com/wsproxy/apiServices/tradeItemService.svc/Search",
+					"protocol": "https",
+					"host": [
+						"apisync",
+						"syncfonia",
+						"com"
+					],
+					"path": [
+						"wsproxy",
+						"apiServices",
+						"tradeItemService.svc",
+						"Search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search info GLN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "I1payfxuw#",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "7508006015651",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n\"TradeItemKey\":{\r\n\t\t\"Gln\": \"7504022468006\" \r\n},\r\n\"TargetMarketSubdivisionCode\": \"484\",\r\n\"TradeItemModules\":[\"ALL\"],\r\n\"PageNumber\":1,\r\n\"PageSize\":250\r\n}"
+				},
+				"url": {
+					"raw": "http://apisync.syncfonia.com/wsproxy/apiServices/tradeItemService.svc/Search",
+					"protocol": "http",
+					"host": [
+						"apisync",
+						"syncfonia",
+						"com"
+					],
+					"path": [
+						"wsproxy",
+						"apiServices",
+						"tradeItemService.svc",
+						"Search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Info GTIN/GLN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "I1payfxuw#",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "7508006015651",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"TradeItemKey\":{\r\n                     \"Gln\":\"7504010155000\",\r\n                     \"Gtin\":\"07502274652341\", \r\n                     \"TargetMarketCountryCode\":\"484\"\r\n                },\r\n\t\"PageNumber\":1,\r\n\t\"PageSize\":100,\r\n\t\"TradeItemModules\":[\"TradeItemHierarchy\",\"TradeItemMeasurements\"]\r\n}"
+				},
+				"url": {
+					"raw": "http://apisync.syncfonia.com/wsproxy/apiServices/tradeItemService.svc/Search",
+					"protocol": "http",
+					"host": [
+						"apisync",
+						"syncfonia",
+						"com"
+					],
+					"path": [
+						"wsproxy",
+						"apiServices",
+						"tradeItemService.svc",
+						"Search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET NumGTINs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "I1payfxuw#",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "7508006015651",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Gln\": \"7504010155000\",\r\n    \"Gtin\": \"07502274652341\",\r\n    \"TargetMarketSubdivisionCode\": \"484\",    \r\n    \"TradeItemModules\": [\r\n        \"ALL\"\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://apisync.syncfonia.com/wsproxy/apiServices/tradeItemService.svc/Get",
+					"protocol": "https",
+					"host": [
+						"apisync",
+						"syncfonia",
+						"com"
+					],
+					"path": [
+						"wsproxy",
+						"apiServices",
+						"tradeItemService.svc",
+						"Get"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
