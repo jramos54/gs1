@@ -2,6 +2,8 @@ import os, traceback, time, json,csv
 import pandas as pd
 import requests
 from dotenv import load_dotenv
+import pyodbc
+import shutil
 
 load_dotenv()
 
@@ -112,34 +114,14 @@ def trade_items(gln):
 def save_dict_list_to_json(dict_list, file_name):
     with open(file_name, 'w', encoding='utf-8') as file:
         json.dump(dict_list, file, ensure_ascii=False, indent=4)
-        
-
-def flatten_json(y):
-    out = {}
-
-    def flatten(x, name=''):
-        if isinstance(x, dict):
-            for a in x:
-                flatten(x[a], f"{name}{a}.")
-        elif isinstance(x, list):
-            for a in x:
-                if isinstance(a, (dict, list)):
-                    flatten(a, name)
-        else:
-            if name[:-1] not in out:  # Evitar duplicados
-                out[name[:-1]] = x
-
-    flatten(y)
-    return out
-
+ 
 def create_attributes(attributes, file_name='attributes_api.csv'):
     with open(file_name, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(['id_atributo', 'atributo_nombre'])
         
         for id, attribute in enumerate(attributes, start=1):
-            writer.writerow([id, attribute])        
-        
+            writer.writerow([id, attribute])                
          
 def read_json(file_name):
     with open(file_name, 'r', encoding='utf-8') as f:
@@ -195,29 +177,100 @@ def create_product_attributes(data, file_name='productos_api.csv', attributes_fi
             if gtin:
                 flatten_and_write(item, writer, gtin, attribute_ids)
 
-if __name__=="__main__":
+def flatten_json(y):
+    out = {}
+
+    def flatten(x, name=''):
+        if isinstance(x, dict):
+            for a in x:
+                flatten(x[a], f"{name}{a}.")
+        elif isinstance(x, list):
+            for a in x:
+                if isinstance(a, (dict, list)):
+                    flatten(a, name)
+        else:
+            if name[:-1] not in out:  # Evitar duplicados
+                out[name[:-1]] = x
+
+    flatten(y)
+    return out
+                
+def write_atributo_sqlserver(atributo_nombre, connection_string):
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
+
+    # Verificar si el atributo ya existe
+    cursor.execute("SELECT id_atributo FROM TAtributos_Gs1 WHERE Atributo_Descripcion = ?", atributo_nombre)
+    data = cursor.fetchone()
+
+    if not data:
+        # Insertar el atributo si no existe
+        cursor.execute("INSERT INTO TAtributos_Gs1 (Atributo_Descripcion) VALUES (?); SELECT SCOPE_IDENTITY();", atributo_nombre)
+        id_atributo = cursor.fetchone()[0]
+        conn.commit()
+    else:
+        id_atributo = data[0]
+
+    cursor.close()
+    conn.close()
+
+    return id_atributo
+
+def write_producto_sqlserver(GTIN, atributo_nombre, valor_atributo, connection_string):
+    id_atributo = write_atributo_sqlserver(atributo_nombre, connection_string)
+
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
+
+    # Verificar si el producto ya existe
+    cursor.execute("SELECT * FROM TAtributosProductos_Gs1 WHERE CodigoBarras = ? AND FkAtributo = ?", GTIN, id_atributo)
+    data = cursor.fetchone()
+
+    if not data:
+        # Insertar el producto si no existe
+        cursor.execute("INSERT INTO TAtributosProductos_Gs1 (CodigoBarras, FkAtributo, Valor_Atributo) VALUES (?, ?, ?)", GTIN, id_atributo, valor_atributo)
+        conn.commit()
+
+    cursor.close()
+    conn.close()
+        
+def load_sql(item, connection_string):
     
-    directorio_archivos = r'C:\Users\jramos\codingFiles\dacodes\gs1_project\excel_files'
-    gln_total = get_gln(directorio_archivos)
-    glns=set(gln_total)
-    item_list=[]
-    gln_special=None
-    for gln in glns:  
-        print(f"items for GLN : {gln}")      
-        item_products= trade_items(gln)
-        time.sleep(6)
-        print(len(item_products))
-        item_list.extend(item_products)    
-    save_dict_list_to_json(item_list,"items_api.json")
+    GTIN=item.get("GTIN")
+    for key, value in item.items():
+        atributo_nombre=key
+        valor_atributo=value
+        if valor_atributo != None:
+            write_producto_sqlserver(GTIN, atributo_nombre, valor_atributo, connection_string)
+        
+if __name__=="__main__":
+    connection="Driver={SQL Server Native Client 11.0};Server=CCAZR-PROC01\PROC_cirugias;Database=ISCAM_GS1;Uid=UsrInovacion;Pwd=M4ryW1tch041123!;"
+    # directorio_archivos = r'C:\Users\jramos\codingFiles\dacodes\gs1_project\excel_files'
+    # gln_total = get_gln(directorio_archivos)
+    # glns=set(gln_total)
+    # item_list=[]
+    # gln_special=None
+    # for gln in glns:  
+    #     print(f"items for GLN : {gln}")      
+    #     item_products= trade_items(gln)
+    #     time.sleep(6)
+    #     print(len(item_products))
+    #     item_list.extend(item_products)    
+    # save_dict_list_to_json(item_list,"items_api.json")
 
     with open('items_api.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    flat_data = flatten_json(data)
-    attribute_list = list(set(flat_data.keys()))
-    create_attributes(attribute_list)
-    attribute_ids = {attr: idx+1 for idx, attr in enumerate(attribute_list)}
-    create_product_attributes(data)
+    for i,j in enumerate(data):
+        flat_data = flatten_json(j)
+        print(f"{i} - GTIN {flat_data.get('GTIN',None)} - {len(flat_data)}")
+        load_sql(flat_data,connection)
+    print(f"total {len(data)}")
+    # save_dict_list_to_json(flat_data,"flatten.json")
+    # attribute_list = list(set(flat_data.keys()))
+    # create_attributes(attribute_list)
+    # attribute_ids = {attr: idx+1 for idx, attr in enumerate(attribute_list)}
+    # create_product_attributes(data)
 
     
     
