@@ -196,6 +196,7 @@ def flatten_json(y):
     return out
                 
 def write_atributo_sqlserver(atributo_nombre, connection_string):
+    id_atributo = None
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
 
