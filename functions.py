@@ -208,6 +208,7 @@ def write_atributo_sqlserver(atributo_nombre, connection_string):
         cursor.execute("INSERT INTO TAtributos_Gs1 (Atributo_Descripcion) VALUES (?); SELECT SCOPE_IDENTITY();", atributo_nombre)
         id_atributo = cursor.fetchone()[0]
         conn.commit()
+        print(f"Atributo '{atributo_nombre}' creado con ID {id_atributo}.")
     else:
         id_atributo = data[0]
 
@@ -230,6 +231,7 @@ def write_producto_sqlserver(GTIN, atributo_nombre, valor_atributo, connection_s
         # Insertar el producto si no existe
         cursor.execute("INSERT INTO TAtributosProductos_Gs1 (CodigoBarras, FkAtributo, Valor_Atributo) VALUES (?, ?, ?)", GTIN, id_atributo, valor_atributo)
         conn.commit()
+        print(f"Producto con GTIN {GTIN} y atributo {atributo_nombre} agregado con éxito.")
 
     cursor.close()
     conn.close()
