@@ -209,13 +209,8 @@ def write_atributo_sqlserver(atributo_nombre, connection_string):
             cursor.execute("INSERT INTO TAtributos_GS1 (Atributo_Descripcion) VALUES (?)", atributo_nombre)
             conn.commit()
 
-            cursor.execute("SELECT SCOPE_IDENTITY();")
-            id_atributo = cursor.fetchone()
-            if id_atributo is not None:
-                id_atributo = id_atributo[0]
-                print(f"Atributo '{atributo_nombre}' creado con ID {id_atributo}.")
-            else:
-                raise ValueError("No se pudo obtener el ID del atributo insertado.")
+            cursor.execute("SELECT PkAtributo FROM TAtributos_GS1 WHERE Atributo_Descripcion = ?", atributo_nombre)
+            data = cursor.fetchone()
         else:
             id_atributo = data[0]
             print(f"Atributo '{atributo_nombre}' ya existe con ID {id_atributo}.")
