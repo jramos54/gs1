@@ -1,4 +1,5 @@
 .env
 *.csv
 venv/
-GPC_raw.json
+gs1Api_dir/GPC_raw.json
+
