@@ -1,0 +1,753 @@
+[
+    {
+        "AdditionalTradeItemIdentification": null,
+        "GTIN": "00757638361309",
+        "AvpList": {
+            "CompoundStringAVP": null,
+            "StringAVP": [
+                {
+                    "AttributeName": "isTradeItemAPromotionalUnit",
+                    "AttributeValue": "False"
+                }
+            ]
+        },
+        "BrandOwner": null,
+        "CatalogueItemState": null,
+        "ContextIdentification": null,
+        "DisplayUnitInformation": null,
+        "GDSNTradeItemClassification": {
+            "AdditionalTradeItemClassification": [
+                {
+                    "AdditionalTradeItemClassificationSystemCode": null,
+                    "AdditionalTradeItemClassificationValue": [
+                        {
+                            "AdditionalTradeItemClassificationCodeDescription": null,
+                            "AdditionalTradeItemClassificationCodeValue": "0",
+                            "AdditionalTradeItemClassificationVersion": null
+                        }
+                    ]
+                }
+            ],
+            "GDSNTradeItemClassificationAttribute": null,
+            "GpcCategoryCode": "10001961",
+            "GpcCategoryDefinition": "Incluye cualquier producto que pueda describirse/observarse como un aparato combinado que consiste en una lavadora y una secadora. \n\n Excluye productos como las lavadoras y secadoras independientes.",
+            "GpcCategoryName": "Combinaci\u00f3n lavadora/secadora",
+            "GpcCategorySegment": "Clasificaci\u00f3n global de productos>>72000000-Electrodom\u00e9sticos>>72010000-Grandes electrodom\u00e9sticos>>72010500-Electrodom\u00e9sticos de lavado grandes>>10001961-Combinaci\u00f3n lavadora/secadora"
+        },
+        "InformationProviderOfTradeItem": {
+            "AdditionalPartyIdentification": null,
+            "GLN": "7508006396811",
+            "PartyAddress": null,
+            "PartyName": "CONTROLADORA MABE SA DE CV",
+            "PartyRoleCode": null
+        },
+        "IsTradeItemABaseUnit": true,
+        "IsTradeItemAConsumerUnit": true,
+        "IsTradeItemADespatchUnit": false,
+        "IsTradeItemAService": null,
+        "IsTradeItemAnInvoiceUnit": false,
+        "IsTradeItemAnOrderableUnit": false,
+        "IsTradeItemNonphysical": null,
+        "IsTradeItemRecalled": null,
+        "ManufacturerOfTradeItem": [],
+        "NextLowerLevelTradeItemInformation": {
+            "ChildTradeItem": [
+                {
+                    "AdditionalTradeItemIdentification": null,
+                    "GTIN": null,
+                    "QuantityOfNextLowerLevelTradeItem": 0
+                }
+            ],
+            "QuantityOfChildren": 0,
+            "TotalQuantityOfNextLowerLevelTradeItem": 0
+        },
+        "PartyInRole": [],
+        "PreliminaryItemStatusCode": {
+            "CodeListVersion": "1.0",
+            "Value": "FINAL"
+        },
+        "ReferencedTradeItem": null,
+        "TargetMarket": [
+            {
+                "TargetMarketCountryCode": {
+                    "CodeListVersion": "1.0",
+                    "Value": "484"
+                },
+                "TargetMarketSubdivisionCode": null
+            }
+        ],
+        "TradeItemContactInformation": null,
+        "TradeItemInformation": [
+            {
+                "AvpList": null,
+                "Extension": {
+                    "Any": [
+                        {
+                            "__type": "AudioVisualMediaContentInformationModule:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AudioVisualMediaContentInformation": [
+                                {
+                                    "AvpList": null,
+                                    "DistributionMediaContentInformation": null,
+                                    "DistributionMediaCount": null,
+                                    "DistributionMediaTypeCode": null,
+                                    "DvdRegionCode": null,
+                                    "GameFormatCode": null,
+                                    "IsDigitalDownloadAvailable": null,
+                                    "NumberOfEpisodes": null,
+                                    "RunTimeMinutes": null,
+                                    "SoftwareCategoryTypeDescription": null
+                                }
+                            ]
+                        },
+                        {
+                            "__type": "CertificationAuthorityInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "Agency": "GS1MX",
+                            "Certified": true,
+                            "LifeCycleStatus": "VALIDATED",
+                            "RequestDateTime": "/Date(1701731350000+0000)/",
+                            "VerifiedDateTime": "/Date(1701731350000+0000)/"
+                        },
+                        {
+                            "__type": "CertificationInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "Agency": "GS1MX",
+                            "CertificationEffectiveEndDateTime": "/Date(1796425750000+0000)/",
+                            "CertificationEffectiveStartDateTime": "/Date(1701731350000+0000)/",
+                            "CertificationOrganisationIdentifier": "7505000010828",
+                            "CertificationStandard": "Calidad de datos 2018",
+                            "CertificationType": "BASIC_DATA_QUALITY_SEAL",
+                            "Certified": true,
+                            "LifeCycleStatus": "VALIDATED",
+                            "RequestDateTimeField": "/Date(1701731350000+0000)/",
+                            "VerifiedDateTimeField": "/Date(1701731350000+0000)/"
+                        },
+                        {
+                            "__type": "ConsumerInstructionsModuleSMD:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "ConsumerAssemblyInstructions": null,
+                            "ConsumerInstructions": null,
+                            "ConsumerStorageInstructions": null,
+                            "ConsumerUsageInstructions": null,
+                            "RecommendedUsageLocation": null
+                        },
+                        {
+                            "__type": "DangerousSubstanceInformationModule:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "DangerousSubstanceInformation": [
+                                {
+                                    "AvpList": null,
+                                    "ControlOfHazardousSubstancesRegulationsAgency": null,
+                                    "ControlOfHazardousSubstancesRegulationsRegulationName": null,
+                                    "DangerousSubstanceProperties": null
+                                }
+                            ]
+                        },
+                        {
+                            "__type": "DeliveryPurchasingInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AgreedMaximumBuyingQuantity": null,
+                            "AgreedMinimumBuyingQuantity": null,
+                            "AvpList": null,
+                            "CanTradeItemBeBackOrdered": null,
+                            "ConsumerFirstAvailabilityDateTime": null,
+                            "DistributionDetails": null,
+                            "EndAvailabilityDateTime": null,
+                            "EndDateTimeOfExclusivity": null,
+                            "EndMaximumBuyingQuantityDateTime": null,
+                            "EndMinimumBuyingQuantityDateTime": null,
+                            "FirstDeliveryDateTime": null,
+                            "FirstOrderDateTime": "/Date(1603882380000+0000)/",
+                            "FirstShipDateTime": "/Date(1701731350000+0000)/",
+                            "GoodsPickupLeadTime": null,
+                            "IncotermInformation": null,
+                            "IsOneTimeBuy": null,
+                            "IsProductCustomizable": null,
+                            "IsTradeItemReorderable": null,
+                            "IsTradeItemShippedInMultipleContainers": null,
+                            "IsTradeItemSizeBasedPricing": null,
+                            "LastOrderDateTime": null,
+                            "LastShipDateTime": null,
+                            "OrderQuantityMaximum": null,
+                            "OrderQuantityMinimum": 1,
+                            "OrderQuantityMultiple": 1,
+                            "OrderSizingFactor": null,
+                            "OrderableReturnableInformation": null,
+                            "OrderingUnitOfMeasure": null,
+                            "ShippingQuantityMinimum": null,
+                            "StartAvailabilityDateTime": "/Date(1699855200000+0000)/",
+                            "StartDateMaximumBuyingQuantity": null,
+                            "StartDateMinimumBuyingQuantity": null
+                        },
+                        {
+                            "__type": "InternalBusinessInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AccessType": 0,
+                            "FirstPublicationDate": "/Date(1654872222466+0000)/",
+                            "ItemType": "TRADEITEM",
+                            "PublicationStatusCode": "PUB",
+                            "RegistrationStatus": 2,
+                            "SessionId": null,
+                            "Supplier": {
+                                "AvpList": null,
+                                "InformationProviderOfParty": {
+                                    "AdditionalPartyIdentification": null,
+                                    "GLN": "7508006396811"
+                                },
+                                "IsPartyActive": null,
+                                "LastUpdateDateTime": null,
+                                "LastUpdateParty": null,
+                                "OrganisationHighestLevelParty": null,
+                                "PartyAddress": null,
+                                "PartyCapability": null,
+                                "PartyContact": null,
+                                "PartyEndEffectiveDate": null,
+                                "PartyInRole": [
+                                    {
+                                        "AdditionalPartyIdentification": null,
+                                        "GLN": "7508006396811",
+                                        "PartyAddress": null,
+                                        "PartyName": "CONTROLADORA MABE SA DE CV",
+                                        "PartyRoleCode": null
+                                    }
+                                ],
+                                "PartyStartEffectiveDate": null,
+                                "Preferences": null,
+                                "RegisteringParty": null,
+                                "RegistrationDateTime": null
+                            }
+                        },
+                        {
+                            "__type": "InternalTargetMarketCompany:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "TradePartnerSpecificProperties": [
+                                {
+                                    "AvpList": null,
+                                    "ConsumerFirstAvailabilityDateTime": null,
+                                    "DistributionMethodCode": null,
+                                    "EndAvailabilityDate": null,
+                                    "EndDateTimeOfExclusivity": null,
+                                    "EndMaximumBuyingQuantityDateTime": null,
+                                    "EndMinimumBuyingQuantityDateTime": null,
+                                    "FirstOrderDateTime": null,
+                                    "FirstShipDateTime": null,
+                                    "Firstdeliverydatetime": null,
+                                    "IsTradeItemADespatchUnit": null,
+                                    "IsTradeItemAnInvoiceUnit": null,
+                                    "IsTradeItemAnOrderableUnit": null,
+                                    "MinimumTradeItemLifespanFromTimeOfArrival": null,
+                                    "MinimumTradeItemLifespanFromTimeOfProduction": null,
+                                    "OrderQuantityMaximum": null,
+                                    "OrderQuantityMinimum": "1",
+                                    "OrderingLeadTime": null,
+                                    "PhysicalResourceTypeCode": null,
+                                    "PhysicalResourceUsage": null,
+                                    "PhysicalResourceUsageAgencyCodeReference": null,
+                                    "PhysicalResourceUsageClassificationCodeReference": null,
+                                    "PhysicalResourceUsageMeasurementBasis": null,
+                                    "PhysicalResourceUsageMeasurementTypeCode": null,
+                                    "PhysicalResourceUsageSubclassificationCodeReference": null,
+                                    "PriceByMeasureTypeCode": null,
+                                    "PublicationDateTime": null,
+                                    "PublicationLocation": null,
+                                    "QuantityOfLayersPerPallet": null,
+                                    "QuantityOfTradeItemsPerPalletLayer": null,
+                                    "ReplacedByTradeItem": null,
+                                    "ReturnGoodsPolicyCode": null,
+                                    "ShipFromLocation": null,
+                                    "ShippingQuantityMinimum": null,
+                                    "StartAvailabilityDate": null,
+                                    "SubestitutedByTradeItem": null,
+                                    "SubestitutedTradeItem": null,
+                                    "TradeItemTradeChannelCode": null,
+                                    "TradePartner": null
+                                }
+                            ]
+                        },
+                        {
+                            "__type": "MarketingInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AutographedBy": null,
+                            "AvpList": {
+                                "CompoundStringAVP": [
+                                    {
+                                        "AttributeCode": null,
+                                        "AttributeName": "pyme",
+                                        "AttributeValue": "False",
+                                        "CodeListNameCode": null,
+                                        "CodeListVersion": null
+                                    },
+                                    {
+                                        "AttributeCode": null,
+                                        "AttributeName": "whiteLabelBrand",
+                                        "AttributeValue": "False",
+                                        "CodeListNameCode": null,
+                                        "CodeListVersion": null
+                                    }
+                                ],
+                                "StringAVP": null
+                            },
+                            "BrandMarketingDescription": null,
+                            "BuiltInProductType": null,
+                            "ChannelSpecificMarketingInformation": null,
+                            "CouponFamilyCode": null,
+                            "Designer": null,
+                            "EducationalFocusDescription": null,
+                            "GradeCodeReference": null,
+                            "IllegalToAdvertiseTargetMarket": null,
+                            "ImitationOrSubstituteFor": null,
+                            "IsImitationOrSubstitute": null,
+                            "IsTradeItemConsideredCollectibleOrMemorabilia": null,
+                            "MarketingCampaign": null,
+                            "NecessaryTradeItemToUseDescription": null,
+                            "Season": null,
+                            "ShortTradeItemMarketingMessage": null,
+                            "SpecialItemCode": null,
+                            "TargetConsumer": null,
+                            "TargetOccasionOrTheme": null,
+                            "TastingNotes": null,
+                            "TradeItemCaseInformation": null,
+                            "TradeItemFeatureBenefit": null,
+                            "TradeItemFeatureCodeReference": null,
+                            "TradeItemIncludedAccessories": null,
+                            "TradeItemIntroductionYear": null,
+                            "TradeItemKeyWords": null,
+                            "TradeItemMarketingMessage": null,
+                            "TradeItemStory": null,
+                            "TradeItemTechnologyDescription": null,
+                            "UsageColourDescription": null
+                        },
+                        {
+                            "__type": "NutritionalInformationModuleSMD:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AvpList": null,
+                            "DescriptionOnANutrient": null,
+                            "FoodBeverageComposition": null,
+                            "IsNutrientRelevantDataProvided": false,
+                            "NutrientFormatTypeCodeReference": null,
+                            "NutrientHeader": null,
+                            "NutrientRelevantDataProvidedDateTime": null,
+                            "NutritionalClaim": null,
+                            "NutritionalClaimDetail": null
+                        },
+                        {
+                            "__type": "PackagingInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "DoPackagingMaterialsContainLatex": 0,
+                            "NumberOfPackagesForSetPiecesGTIN": 0,
+                            "Packaging": [
+                                {
+                                    "AverageDistanceTravelledToPointOfPackagingCode": null,
+                                    "AvpList": null,
+                                    "DoesPackagingHaveWheels": null,
+                                    "IsPackagingExemptFromRefuseObligation": null,
+                                    "IsPackagingSuitableForAirShipment": null,
+                                    "IsRadioFrequencyIdOnPackaging": null,
+                                    "OfferOnPack": null,
+                                    "PackageDeposit": null,
+                                    "PackagingDate": null,
+                                    "PackagingDimension": null,
+                                    "PackagingFeatureCode": null,
+                                    "PackagingFunctionCode": null,
+                                    "PackagingLevel": null,
+                                    "PackagingMaterial": null,
+                                    "PackagingOwnerIdentification": null,
+                                    "PackagingOwnerName": null,
+                                    "PackagingRecyclingProcessTypeCode": null,
+                                    "PackagingRecyclingSchemeCode": null,
+                                    "PackagingRefundObligationName": null,
+                                    "PackagingRefuseObligationName": null,
+                                    "PackagingShapeCode": null,
+                                    "PackagingSustainabilityFeatureCode": null,
+                                    "PackagingTermsAndConditionsCode": null,
+                                    "PackagingTypeCode": {
+                                        "CodeListVersion": "1.0",
+                                        "Value": "BX"
+                                    },
+                                    "PackagingTypeDescription": null,
+                                    "PackagingWeight": null,
+                                    "PlatformTermsAndConditionsCode": null,
+                                    "PlatformTypeCode": null,
+                                    "ReturnableAsset": null,
+                                    "ShippingContainerQuantityDescription": null,
+                                    "UsableProductVolume": null
+                                }
+                            ]
+                        },
+                        {
+                            "__type": "PackagingMarking:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AvpList": null,
+                            "ConsumerPackageDisclaimer": null,
+                            "ConsumerWarningInformation": null,
+                            "HasBatchNumber": null,
+                            "IsNetContentDeclarationIndicated": null,
+                            "IsPackagingMarkedReturnable": false,
+                            "IsPriceOnPack": null,
+                            "IsTradeItemMarkedAsRecyclable": null,
+                            "LocalPackagingMarkedLabelAccreditationCodeReference": null,
+                            "OfferOnPack": null,
+                            "PackagingDate": null,
+                            "PackagingMarkedLabelAccreditationCode": null,
+                            "PackagingMarkedLanguageCode": null,
+                            "PackagingMarkedRecyclableScheme": null,
+                            "SerialNumberLocationCode": null,
+                            "WarningCopyDescription": null
+                        },
+                        {
+                            "__type": "PlaceOfItemActivity:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AvpList": null,
+                            "ImportClassification": null,
+                            "PlaceOfProductActivity": null
+                        },
+                        {
+                            "__type": "ProductCharacteristicsModule:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "ProductCharacteristics": null
+                        },
+                        {
+                            "__type": "PromotionalItemInformationModule:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "IsTradeItemAPromotionalUnit": false,
+                            "PromotionalItemInformation": null
+                        },
+                        {
+                            "__type": "ReferencedFileDetailInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "ReferencedFileHeader": [
+                                {
+                                    "AlternateText": null,
+                                    "AvpList": {
+                                        "CompoundStringAVP": [
+                                            {
+                                                "AttributeCode": null,
+                                                "AttributeName": "certificationEffectiveStartDateTime",
+                                                "AttributeValue": "2023-12-04T17:09:10.000-0600",
+                                                "CodeListNameCode": null,
+                                                "CodeListVersion": null
+                                            },
+                                            {
+                                                "AttributeCode": null,
+                                                "AttributeName": "certificationEffectiveEndDateTime",
+                                                "AttributeValue": "2026-12-04T17:09:10.000-0600",
+                                                "CodeListNameCode": null,
+                                                "CodeListVersion": null
+                                            }
+                                        ],
+                                        "StringAVP": null
+                                    },
+                                    "ContentDescription": null,
+                                    "FileCreationProgram": null,
+                                    "FileEffectiveEndDateTime": null,
+                                    "FileEffectiveStartDateTime": null,
+                                    "FileFormatDescription": null,
+                                    "FileFormatName": null,
+                                    "FileLanguageCode": null,
+                                    "FileName": null,
+                                    "FileOptimalViewerName": null,
+                                    "FileOriginCountryCode": null,
+                                    "FileVersion": null,
+                                    "IsPrimaryFile": null,
+                                    "ReferencedFileTypeCode": null,
+                                    "TitleText": null,
+                                    "UniformResourceIdentifier": null,
+                                    "ReferencedFileDetail": null
+                                }
+                            ]
+                        },
+                        {
+                            "__type": "SalesInformationModule:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "ApplicableAllowanceCharge": null,
+                            "ApplicablePaymentTerms": null,
+                            "AvpList": null,
+                            "SalesInformation": null,
+                            "TradeItemPriceInformation": null
+                        },
+                        {
+                            "__type": "TradeItemDataCarrierAndIdentification:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "DataCarrier": [
+                                {
+                                    "ApplicationIdentifierTypeCode": null,
+                                    "AvpList": null,
+                                    "DataCarrierFamilyTypeCode": null,
+                                    "DataCarrierPresenceCode": null,
+                                    "DataCarrierTypeCode": {
+                                        "CodeListVersion": "1.0",
+                                        "Value": "UPC_A"
+                                    }
+                                }
+                            ],
+                            "GS1TradeItemIdentificationKey": null
+                        },
+                        {
+                            "__type": "TradeItemDescriptionInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AdditionalTradeItemDescription": null,
+                            "AvpList": null,
+                            "BrandNameInformation": {
+                                "BrandName": "MABE",
+                                "LanguageSpecificBrandName": null,
+                                "LanguageSpecificSubbrandName": null,
+                                "SubBrand": ""
+                            },
+                            "Colour": null,
+                            "DescriptionShort": [
+                                {
+                                    "LanguageCode": null,
+                                    "Value": "CENTRO DE LAVADO MABE 1 PIEZA(S)"
+                                }
+                            ],
+                            "FunctionalName": [
+                                {
+                                    "LanguageCode": null,
+                                    "Value": "CENTRO DE LAVADO"
+                                }
+                            ],
+                            "InvoiceName": null,
+                            "IsTradeItemDesignedToBeDivisible": null,
+                            "LabelDescription": null,
+                            "OpacityTypeCode": null,
+                            "ProductRange": null,
+                            "RegulatedProductName": null,
+                            "TradeItemDescription": [
+                                {
+                                    "LanguageCode": null,
+                                    "Value": "MABE CENTRO DE LAVADO MCL2040PSDG0 1 PIEZA(S)"
+                                }
+                            ],
+                            "TradeItemEcontent": null,
+                            "TradeItemFormCode": null,
+                            "TradeItemFormDescription": null,
+                            "TradeItemGroupIdentificationCodeReference": null,
+                            "TradeItemVariant": [],
+                            "VariantDescription": [
+                                {
+                                    "LanguageCode": null,
+                                    "Value": "MCL2040PSDG0"
+                                }
+                            ]
+                        },
+                        {
+                            "__type": "TradeItemHandlingInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AvpList": {
+                                "CompoundStringAVP": [],
+                                "StringAVP": [
+                                    {
+                                        "AttributeName": "canBeTransportedWithABasicForklift",
+                                        "AttributeValue": "False"
+                                    },
+                                    {
+                                        "AttributeName": "doesTradeItemSupportsInterchangeableAccommodation",
+                                        "AttributeValue": "False"
+                                    }
+                                ]
+                            },
+                            "ClampPressure": null,
+                            "HandlingInstructionsCodeReference": null,
+                            "HandlingInstructionsDescription": null,
+                            "TradeItemStacking": null
+                        },
+                        {
+                            "__type": "TradeItemHierarchy:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AvpList": null,
+                            "IsNonGtinLogisticsUnitPackedIrregularly": null,
+                            "IsTradeItemPackedIrregularly": null,
+                            "LayerHeight": null,
+                            "QuantityOfCompleteLayersContainedInATradeItem": null,
+                            "QuantityOfInnerPack": null,
+                            "QuantityOfLayersPerPallet": null,
+                            "QuantityOfNextLevelTradeItemWithinInnerPack": null,
+                            "QuantityOfTradeItemsContainedInACompleteLayer": null,
+                            "QuantityOfTradeItemsPerPallet": null,
+                            "QuantityOfTradeItemsPerPalletLayer": null,
+                            "SuggestedConsumerPack": null,
+                            "UnitsPerTradeItem": null
+                        },
+                        {
+                            "__type": "TradeItemLifespanModule:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "TradeItemLifespan": {
+                                "AvpList": null,
+                                "DoesTradeItemHaveAutoReaderTracker": null,
+                                "ItemMinimumDurability": null,
+                                "ItemPeriodSafeToUseAfterOpening": null,
+                                "MinimumTradeItemLifespanFromTimeOfArrival": null,
+                                "MinimumTradeItemLifespanFromTimeOfProduction": null,
+                                "OpenedTradeItemLifespan": null,
+                                "SupplierSpecifiedMinimumConsumerStorageDays": null
+                            }
+                        },
+                        {
+                            "__type": "TradeItemMeasurements:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AdditionalTradeItemDimensions": null,
+                            "AvpList": null,
+                            "Depth": {
+                                "CodeListVersion": "1.0",
+                                "MeasurementUnitCode": "MMT",
+                                "Value": 840
+                            },
+                            "Diameter": null,
+                            "Height": {
+                                "CodeListVersion": "1.0",
+                                "MeasurementUnitCode": "MMT",
+                                "Value": 1975
+                            },
+                            "InBoxCubeDimension": null,
+                            "IndividualUnitMaximumSize": null,
+                            "IndividualUnitMinimumSize": null,
+                            "NetContent": [
+                                {
+                                    "CodeListVersion": "1.0",
+                                    "MeasurementUnitCode": "H87",
+                                    "Value": 1
+                                }
+                            ],
+                            "PegMeasurements": null,
+                            "TradeItemCompositionDepth": null,
+                            "TradeItemCompositionWidth": null,
+                            "TradeItemNesting": null,
+                            "TradeItemNonpackagedSize": null,
+                            "TradeItemOrientation": null,
+                            "TradeItemWeight": {
+                                "DrainedWeight": null,
+                                "GrossWeight": {
+                                    "CodeListVersion": "1.0",
+                                    "MeasurementUnitCode": "GRM",
+                                    "Value": 120000
+                                },
+                                "NetWeight": {
+                                    "CodeListVersion": "1.0",
+                                    "MeasurementUnitCode": null,
+                                    "Value": 0
+                                }
+                            },
+                            "Width": {
+                                "CodeListVersion": "1.0",
+                                "MeasurementUnitCode": "MMT",
+                                "Value": 750
+                            }
+                        },
+                        {
+                            "__type": "TransportationHazardousClassificationModule:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "TransportationClassification": [
+                                {
+                                    "MarinePollutantTechnicalName": null,
+                                    "RegulatedTransportationMode": null,
+                                    "ReportableQuantityTechnicalName": null,
+                                    "TransportationModeRegulatoryAgency": null
+                                }
+                            ]
+                        },
+                        {
+                            "__type": "VariableTradeItemInformation:#GS1Mx.Models.apiDTO.TradeItem.Extensions",
+                            "AvpList": null,
+                            "IsTradeItemAVariableUnit": false,
+                            "VariableTradeItemTypeCode": null,
+                            "VariableWeightAllowableDeviationPercentage": null,
+                            "VariableWeightRangeMaximum": null,
+                            "VariableWeightRangeMinimum": null
+                        },
+                        {
+                            "__type": "CategoriesGS1API:#GS1Mx.Models.FIC.GS1Model",
+                            "Accesorios": null,
+                            "AccesoriosEle": null,
+                            "AccesoriosMoto": null,
+                            "AlimentacionBB": null,
+                            "AutoAsientos": null,
+                            "AutoEstereos": null,
+                            "Baneras": null,
+                            "Belleza": null,
+                            "BellezaTr": null,
+                            "Bicicletas": null,
+                            "Boiler": null,
+                            "Calzado": null,
+                            "Camaras": null,
+                            "Campanas": null,
+                            "CampanasyEstufas": null,
+                            "Carriolas": null,
+                            "Colchones": null,
+                            "Computo": null,
+                            "Ejercicio": null,
+                            "Electrodomesticos": null,
+                            "Entretenimiento": null,
+                            "Estufas": null,
+                            "FerreteriaElectricos": null,
+                            "FerreteriaGral": null,
+                            "FerreteriaManual": null,
+                            "Hogar": null,
+                            "HomeAudio": null,
+                            "Hornos": null,
+                            "InfantilesColec": null,
+                            "Inflables": null,
+                            "InsumosAutomotrices": null,
+                            "Juguetes": null,
+                            "Lavanderia": {
+                                "AVPS": [],
+                                "CEnergiaTC": null,
+                                "CEnergiaUM": null,
+                                "CEnergiaVL": null,
+                                "Cntrfugado": null,
+                                "ConEmpaque": "1",
+                                "ConEnergia": null,
+                                "CsLavado": null,
+                                "CsSecado": null,
+                                "Emplea": null,
+                                "EmpleaTC": null,
+                                "EmpleaUM": null,
+                                "EmpleaVL": null,
+                                "FunBasede": null,
+                                "MatTina": null,
+                                "Material": null,
+                                "NivTemp": null,
+                                "Operacion": null,
+                                "Pedestal": null,
+                                "PotenciaWh": null,
+                                "ProgLavado": null,
+                                "PtnciaWhTC": null,
+                                "PtnciaWhUM": null,
+                                "PtnciaWhVL": null,
+                                "TpProducto": "MCL2040PSDG0",
+                                "Voltaje": null,
+                                "VoltajeTC": null,
+                                "VoltajeUM": null,
+                                "VoltajeVL": null
+                            },
+                            "Libros": null,
+                            "MaquinasCoser": null,
+                            "Mecedoras": null,
+                            "MedidasFueraEmpaque": {
+                                "Certificaciones": null,
+                                "Depth": null,
+                                "DimensionTypeCode": null,
+                                "GrossWeight": null,
+                                "Height": null,
+                                "Id": 0,
+                                "MeasurementDepth": null,
+                                "MeasurementHeight": null,
+                                "MeasurementWeight": null,
+                                "MeasurementWidth": null,
+                                "Width": null
+                            },
+                            "Mochilas": null,
+                            "Moda": null,
+                            "Motocicletas": null,
+                            "Peliculas": null,
+                            "Perfumes": null,
+                            "Planchas": null,
+                            "ProductosTV": null,
+                            "Refrigeradores": null,
+                            "Relojes": null,
+                            "Ropa": null,
+                            "Salas": null,
+                            "SillasBebes": null,
+                            "Telefonia": null,
+                            "Televisores": null,
+                            "Ventiladores": null,
+                            "Video": null
+                        }
+                    ]
+                },
+                "ProductionVariantDescription": null,
+                "ProductionVariantEffectiveDateTime": null,
+                "TradeItemComponents": null
+            }
+        ],
+        "TradeItemSynchronisationDates": {
+            "CancelledDateTime": null,
+            "CommunityVisibilityDateTime": null,
+            "DiscontinuedDateTime": null,
+            "EffectiveDateTime": "/Date(1654872222466+0000)/",
+            "LastChangeDateTime": "/Date(1708036732955+0000)/",
+            "PublicationDateTime": "/Date(1654872222466+0000)/"
+        },
+        "TradeItemTradeChannelCode": null,
+        "TradeItemUnitDescriptorCode": {
+            "CodeListVersion": "1.0",
+            "Value": "BASE_UNIT_OR_EACH"
+        }
+    }
+]
