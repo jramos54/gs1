@@ -1,3 +1,4 @@
 .env
 *.csv
 venv/
+GPC_raw.json
