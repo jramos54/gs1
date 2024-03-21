@@ -1,5 +1,5 @@
 import requests
-import os, datetime
+import os, datetime, time
 from dataprocessing import date_conversion
 from dotenv import load_dotenv
 load_dotenv()
@@ -65,7 +65,7 @@ def trade_items_by_date(start_date,end_date):
     total_elements = []
     username = os.getenv("USER")
     password = os.getenv("PASSWORD")
-    # print(username,password)
+    print(username,password)
     headers = {
         "Content-Type": "application/json",
     }
@@ -81,6 +81,7 @@ def trade_items_by_date(start_date,end_date):
         }
         # print(payload)
         try:
+            time.sleep(60)
             response = requests.post(url, json=payload, headers=headers, auth=(username, password))
             # print(response.text)
             data = response.json()
