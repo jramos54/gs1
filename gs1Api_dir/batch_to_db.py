@@ -2,7 +2,7 @@ from getGpcCodes import gpc_by_file
 from gs1Api import trade_items_by_gpc
 from batchesProcessing import create_batch
 from dataprocessing import read_json, flatten_json, read_files,process_files,move_files
-from queries import fetch_atributos,write_atributo_sqlserver
+from queries import fetch_atributos,write_producto_sqlserver,fetch_atributo_id,write_productos_batch
 import datetime,json
 
 if __name__ == "__main__":
@@ -13,22 +13,21 @@ if __name__ == "__main__":
     today=datetime.datetime.today()
     end_date=today.strftime("%Y-%m-%d")
     
-    # => Leer los GPC y guardarlos en batches
-    # data=gpc_by_file(file_name)
-    # gpc_data=data["level4"]
-    
-    # for gpc in gpc_data:
-    #     items=trade_items_by_gpc(gpc,start_date,end_date)
-    #     create_batch(gpc,items)
-    
-    # => Leer los batches y comparar los atributos existentes
-    # files = read_files("atributtesBatches")
-    # process_files(files,connection)
-    # move_files("atributtesBatches","itemsBatches")
-                    
     # => Leer los batches para guardar en la BD
     
     files=read_files("itemsBatches")
+    for file in files:
+        datas=read_json(file)
+        for data in datas:
+            products_insert=[]
+            item=flatten_json(data)
+            GTIN=item.get("GTIN",None)
+            
+            for key, value in item.items():
+                id_atributo = fetch_atributo_id(key, connection)
+                products_insert.append((GTIN, id_atributo, value))
+            write_productos_batch(products_insert,connection)
+    
     
 
     
