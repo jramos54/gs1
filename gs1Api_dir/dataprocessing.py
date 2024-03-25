@@ -99,4 +99,25 @@ def process_files(files, connection_string):
     # Inserta todos los atributos nuevos de una sola vez
     if atributos_nuevos:
         write_atributos_sqlserver(atributos_nuevos, connection_string)
-        
+
+def move_file(nombre_archivo,origen_dir, destino_dir):
+    # Obtenemos la ruta completa del archivo origen
+    origen_path = os.path.join(origen_dir, nombre_archivo)
+
+    # Verificamos si el archivo origen existe
+    if not os.path.exists(origen_path):
+        print(f"El archivo {nombre_archivo} no existe en el directorio {origen_dir}.")
+        return
+
+    # Obtenemos la ruta completa del directorio destino
+    destino_path = os.path.join(destino_dir, nombre_archivo)
+
+    # Verificamos si el archivo destino ya existe
+    if os.path.exists(destino_path):
+        print(f"Ya existe un archivo con el nombre {nombre_archivo} en el directorio {destino_dir}.")
+        return
+
+    # Mover el archivo
+    shutil.move(origen_path, destino_path)
+
+    print(f"El archivo {nombre_archivo} ha sido movido a {destino_dir}.")

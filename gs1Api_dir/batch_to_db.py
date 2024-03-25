@@ -1,7 +1,7 @@
 from getGpcCodes import gpc_by_file
 from gs1Api import trade_items_by_gpc
 from batchesProcessing import create_batch
-from dataprocessing import read_json, flatten_json, read_files,process_files,move_files
+from dataprocessing import read_json, flatten_json, read_files,process_files,move_file
 from queries import fetch_atributos,write_producto_sqlserver,fetch_atributo_id,write_productos_batch
 import datetime,json
 
@@ -22,11 +22,15 @@ if __name__ == "__main__":
             products_insert=[]
             item=flatten_json(data)
             GTIN=item.get("GTIN",None)
+            print(GTIN)
             
             for key, value in item.items():
-                id_atributo = fetch_atributo_id(key, connection)
-                products_insert.append((GTIN, id_atributo, value))
+                if value != None:
+                    id_atributo = fetch_atributo_id(connection,key)
+                    print(f"{id_atributo} - {key} - {value}")
+                    products_insert.append((GTIN, id_atributo, value))
             write_productos_batch(products_insert,connection)
+        move_file(file,"itemsBatches","obsoletes")
     
     
 

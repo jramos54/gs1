@@ -57,6 +57,7 @@ def write_producto_sqlserver(GTIN, id_atributo, valor_atributo, connection_strin
     conn.close()
     
 def write_productos_batch(productos, connection_string):
+    print("\t\t\tINSERTION TO DB")
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
 
@@ -71,6 +72,7 @@ def write_productos_batch(productos, connection_string):
 
         if not data:
             insertar_productos.append((GTIN, id_atributo, valor_atributo))
+            print(f"to insert {GTIN} - {id_atributo} - {valor_atributo}")
 
     # Inserción por lotes
     if insertar_productos:
