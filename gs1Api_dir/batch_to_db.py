@@ -22,10 +22,13 @@ if __name__ == "__main__":
             products_insert=[]
             item=flatten_json(data)
             GTIN=item.get("GTIN",None)
+            print(GTIN)
             
             for key, value in item.items():
-                id_atributo = fetch_atributo_id(key, connection)
-                products_insert.append((GTIN, id_atributo, value))
+                if value != None:
+                    id_atributo = fetch_atributo_id(connection,key)
+                    print(f"{id_atributo} - {key} - {value}")
+                    products_insert.append((GTIN, id_atributo, value))
             write_productos_batch(products_insert,connection)
     
     
