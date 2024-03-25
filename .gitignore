@@ -2,5 +2,4 @@
 *.csv
 venv/
 gs1Api_dir/GPC_raw.json
-__pycache__/
-
+*.xlsx
