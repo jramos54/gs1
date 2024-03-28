@@ -3,3 +3,4 @@
 venv/
 gs1Api_dir/GPC_raw.json
 *.xlsx
+*.json
