@@ -37,7 +37,6 @@ if __name__ == "__main__":
                         products_insert.append((GTIN, id_atributo, value))
                         codigoBarras.append(GTIN)
             write_productos_batch(products_insert,connection)
-        move_file(file,"obsoletes")
     
     
 

@@ -102,7 +102,6 @@ def process_files(files, connection_string):
     if atributos_nuevos:
         print("writting attributes...")
         write_atributos_sqlserver(atributos_nuevos, connection_string)
-
 def move_file(ruta_absoluta_archivo, destino_dir):
     # Extraer el nombre del archivo de la ruta absoluta
     nombre_archivo = os.path.basename(ruta_absoluta_archivo)
