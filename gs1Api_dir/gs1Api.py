@@ -24,25 +24,27 @@ def trade_items_by_gpc(gpc,start_date,end_date):
             "LastChangedEndDateTime": date_conversion(end_date),
             "LastChangedStartDateTime": date_conversion(start_date),
             "TargetMarketCountryCode": "484",
-            "IsDataQualityVerified": True,
             "Gpc": gpc,
             "PageNumber": page_number,
             "PageSize": page_size,
             "TradeItemModules": ["ALL"]
         }
-        # print(payload)
         try:
-            response = requests.post(url, json=payload, headers=headers, auth=(username, password))
-            # print(response.text)
-            data = response.json()
+            response = requests.post(url, json=payload, headers=headers, auth=(username, password))            
+            time.sleep(30)
+
             if response.status_code == 200:
+                data = response.json()
                 if data.get("Errors") is None:
                     trade_item_list = data.get('TradeItemList', [])
                     print(f"total elements : {len(trade_item_list)}")
                     total_elements.extend(trade_item_list)
                     page_number += 1
+                    if len(trade_item_list)<page_size:
+                        print(f"La paginación ha finalizado. La ultima extraccion fue {len(trade_item_list)}")
+                        break
+                    
                 else:
-                    print("x"*50)
                     print(f"La paginación ha finalizado.\n{data.get('Errors')}")
                     break
             else:

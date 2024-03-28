@@ -14,13 +14,12 @@ def sum_list_sizes_in_json_files(directory):
                 data = json.load(file)
                 
                 # Suma el tamaño de todas las listas en el archivo
-                # for key, value in data.items():
-                #     if isinstance(value, list):
-                #         total_size += len(value)
+                total_size += len(data)
                 print(len(data))
     
     return total_size
 
 if __name__=="__main__":
     directory="atributtesBatches"
-    sum_list_sizes_in_json_files(directory)
+    totals=sum_list_sizes_in_json_files(directory)
+    print(f"total de elementos {totals}")

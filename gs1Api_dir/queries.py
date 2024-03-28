@@ -61,23 +61,66 @@ def write_productos_batch(productos, connection_string):
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
 
+    gtins_unicos = set(producto[0] for producto in productos)
+
+    productos_existentes = {}
+    if gtins_unicos:  # Asegurarse de que la lista no esté vacía
+        placeholders = ', '.join('?' for _ in gtins_unicos)
+        query = f"SELECT CodigoBarras, FkAtributo FROM TAtributosProductos_GS1 WHERE CodigoBarras IN ({placeholders})"
+        cursor.execute(query, list(gtins_unicos))
+        for row in cursor.fetchall():
+            productos_existentes[(row.CodigoBarras, row.FkAtributo)] = True
+
     insertar_productos = []
 
     for producto in productos:
         GTIN, id_atributo, valor_atributo = producto
 
-        # Verificar si el producto ya existe
-        cursor.execute("SELECT PkAtributoValor FROM TAtributosProductos_GS1 WHERE CodigoBarras = ? AND FkAtributo = ?", GTIN, id_atributo)
-        data = cursor.fetchone()
-
-        if not data:
+        if not productos_existentes.get((GTIN, id_atributo)):
             insertar_productos.append((GTIN, id_atributo, valor_atributo))
             print(f"to insert {GTIN} - {id_atributo} - {valor_atributo}")
 
-    # Inserción por lotes
     if insertar_productos:
+        print("WRITTING IN DB")
         cursor.executemany("INSERT INTO TAtributosProductos_GS1 (CodigoBarras, FkAtributo, Valor_Atributo) VALUES (?, ?, ?)", insertar_productos)
         conn.commit()
 
     cursor.close()
     conn.close()
+
+
+def getGtin(connection):
+    
+    conn = pyodbc.connect(connection)
+    cursor = conn.cursor()
+
+    try:
+        # Ejecutar la consulta
+        cursor.execute("SELECT DISTINCT CodigoBarras FROM TAtributosProductos_Gs1")
+
+        # Recuperar todos los resultados
+        items = cursor.fetchall()
+
+        # Convertir la lista de tuplas a una lista simple
+        items = [item[0] for item in items]
+
+        return items
+
+    except Exception as e:
+        print(f"Ocurrió un error: {e}")
+        return []
+
+    finally:
+        # Cerrar la conexión a la base de datos
+        conn.close()
+
+def load_atributes(connection):
+    # Esta función carga todos los atributos y sus IDs de la base de datos
+    # y los almacena en un diccionario.
+    atributos_dict = {}
+    conn = pyodbc.connect(connection)
+    cursor = conn.cursor()
+    cursor.execute("SELECT Atributo_Descripcion,PkAtributo FROM TAtributos_GS1")  # Asegúrate de ajustar esta consulta
+    for key, id_atributo in cursor.fetchall():
+        atributos_dict[key] = id_atributo
+    return atributos_dict

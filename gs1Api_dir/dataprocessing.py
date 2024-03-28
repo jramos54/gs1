@@ -87,37 +87,36 @@ def process_files(files, connection_string):
     db_atributos = set(fetch_atributos(connection_string))
     atributos_nuevos = set()
 
-    for file in files:
+    for i, file in enumerate(files):
+        print(f"{i+1}/{len(files)}Reading {file}")
         batch = read_json(file)
         for item in batch:
             element = flatten_json(item)
             
             for key in element.keys():
                 if key not in db_atributos and key not in atributos_nuevos:
+                    print(f"{key}")
                     atributos_nuevos.add(key)
 
     # Inserta todos los atributos nuevos de una sola vez
     if atributos_nuevos:
+        print("writting attributes...")
         write_atributos_sqlserver(atributos_nuevos, connection_string)
 
-def move_file(nombre_archivo,origen_dir, destino_dir):
-    # Obtenemos la ruta completa del archivo origen
-    origen_path = os.path.join(origen_dir, nombre_archivo)
-
-    # Verificamos si el archivo origen existe
-    if not os.path.exists(origen_path):
-        print(f"El archivo {nombre_archivo} no existe en el directorio {origen_dir}.")
-        return
-
-    # Obtenemos la ruta completa del directorio destino
+def move_file(ruta_absoluta_archivo, destino_dir):
+    # Extraer el nombre del archivo de la ruta absoluta
+    nombre_archivo = os.path.basename(ruta_absoluta_archivo)
+    
+    # Construir la ruta de destino
     destino_path = os.path.join(destino_dir, nombre_archivo)
 
-    # Verificamos si el archivo destino ya existe
-    if os.path.exists(destino_path):
-        print(f"Ya existe un archivo con el nombre {nombre_archivo} en el directorio {destino_dir}.")
+    if not os.path.exists(ruta_absoluta_archivo):
+        print(f"El archivo {nombre_archivo} no existe en la ubicación proporcionada.")
         return
 
-    # Mover el archivo
-    shutil.move(origen_path, destino_path)
+    # Si el archivo destino ya existe, eliminarlo
+    if os.path.exists(destino_path):
+        os.remove(destino_path)
 
-    print(f"El archivo {nombre_archivo} ha sido movido a {destino_dir}.")
+    shutil.move(ruta_absoluta_archivo, destino_path)
+    print(f"El archivo {nombre_archivo} ha sido movido y sobrescrito en {destino_dir}.")

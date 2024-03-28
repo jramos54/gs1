@@ -1,8 +1,7 @@
 from getGpcCodes import gpc_by_file
 from gs1Api import trade_items_by_gpc
 from batchesProcessing import create_batch
-from dataprocessing import read_json, flatten_json, read_files,process_files,move_files
-from queries import fetch_atributos,write_atributo_sqlserver
+from dataprocessing import read_json, flatten_json, read_files,process_files,move_files,move_file
 import datetime,json
 
 if __name__ == "__main__":
@@ -28,7 +27,7 @@ if __name__ == "__main__":
                     
     # => Leer los batches para guardar en la BD
     
-    files=read_files("itemsBatches")
-    
+    # files=read_files("itemsBatches")
+    move_file("10000003_batch.json","obsoletes")
 
     
